@@ -1,0 +1,256 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.75%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: #333;
+  width: 100%;
+}
+
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal,
+.listener {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.modal .edit,
+.listener .edit {
+  z-index: 101;
+}
+
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+}
+
+.modal-btns {
+  z-index: 101;
+}
+
+@supports ((-webkit-backdrop-filter: blur(0.8rem)) or (backdrop-filter: blur(0.8rem))) or (-webkit-backdrop-filter: blur(0.8rem)) {
+  .modal {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(0.8rem);
+            backdrop-filter: blur(0.8rem);
+  }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo__container {
+  margin-top: 3em;
+  width: 100%;
+  height: 100%;
+}
+
+.todo__container .todo {
+  width: 80%;
+  background-color: #eee;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+}
+
+.todo__container .todo__header {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 1fr 1fr;
+      grid-template-columns: 3fr 1fr 1fr;
+  -ms-grid-rows: 2fr 1fr;
+      grid-template-rows: 2fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #a4508b;
+  background-image: url("https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_960_720.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 30rem;
+}
+
+.todo__container .todo__header *:not(.shadow) {
+  z-index: 2;
+}
+
+.todo__container .todo__header-text {
+  margin-left: 1em;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.todo__container .todo__header-info {
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.todo__container .todo__header-form {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1 / 4;
+}
+
+.todo__container .todo__header-form-control {
+  width: 100%;
+}
+
+.todo__container .todo__header-form-control input,
+.todo__container .todo__header-form-control button {
+  padding: 1rem 1.5em;
+  font-family: inherit;
+  font-size: 1.6rem;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 1rem;
+}
+
+.todo__container .todo__header-form-control input {
+  margin-left: 2em;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+.todo__container .todo__header-form-control button {
+  position: relative;
+  margin-left: 1em;
+  background: none;
+  overflow: hidden;
+}
+
+.todo__container .todo__header-form-control button::before {
+  position: absolute;
+  top: -2rem;
+  left: -3.5rem;
+  content: '';
+  width: 20%;
+  height: 200%;
+  background-color: white;
+  opacity: .5;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  z-index: -1;
+  -webkit-transition: left .5s;
+  transition: left .5s;
+}
+
+.todo__container .todo__header-form-control button:hover:before {
+  left: 11rem;
+}
+
+.todo__container .todo__header-form-control button:hover {
+  cursor: pointer;
+}
+
+.todo__container .todo__tasks {
+  margin: 2em auto;
+  list-style: none;
+  width: 90%;
+}
+
+.todo__container .todo__tasks-item {
+  margin: .5em auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1em;
+  background-color: #c5b0a1;
+  border-radius: 1rem;
+  -webkit-box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+.todo__container .todo__tasks-item .check {
+  color: #156315;
+}
+
+.todo__container .todo__tasks-item .remove {
+  color: #c40505;
+}
+
+.todo__container .todo__tasks-item-controls button {
+  font-size: inherit;
+  margin: 0 .5em;
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.todo__container .todo__tasks-item:nth-child(even) {
+  background-color: #ad978c;
+}
+
+.todo__container .todo__tasks-item[data-is-done="true"] p {
+  color: grey;
+  text-decoration: line-through;
+}
+
+@media screen and (max-width: 45em) {
+  .todo__container .todo .todo__header {
+    grid-auto-flow: row;
+  }
+}
+/*# sourceMappingURL=main.css.map */
