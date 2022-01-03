@@ -39,70 +39,7 @@
                 <div class="shadow"></div>
             </header>
             <ul class="todo__tasks">
-                <!-- <li class="todo__tasks-item" data-is-done="false" data-id="1">
-                    <p>Wynająć auto1</p>
-                    <div class="todo__tasks-item-controls">
-                        <button class="check"><span class="sr-only">Mark as done</span><i class="fas fa-check-circle"></i></button>
-                        <button class="edit"><span class="sr-only">Edit</span><i class="fas fa-edit"></i></button>
-                        <button class="remove"><span class="sr-only">Remove</span><i class="fas fa-times"></i></button>
-                    </div>
-                </li>
-                <li class="todo__tasks-item" data-is-done="false" data-id="2">
-                    <p>Wynająć auto2</p>
-                    <div class="todo__tasks-item-controls">
-                        <button class="check"><span class="sr-only">Mark as done</span><i class="fas fa-check-circle"></i></button>
-                        <button class="edit"><span class="sr-only">Edit</span><i class="fas fa-edit"></i></button>
-                        <button class="remove"><span class="sr-only">Remove</span><i class="fas fa-times"></i></button>
-                    </div>
-                </li>
-                <li class="todo__tasks-item" data-is-done="false" data-id="3">
-                    <p>Wynająć auto3</p>
-                    <div class="todo__tasks-item-controls">
-                        <button class="check"><span class="sr-only">Mark as done</span><i class="fas fa-check-circle"></i></button>
-                        <button class="edit"><span class="sr-only">Edit</span><i class="fas fa-edit"></i></button>
-                        <button class="remove"><span class="sr-only">Remove</span><i class="fas fa-times"></i></button>
-                    </div>
-                </li>
-                <li class="todo__tasks-item" data-is-done="true" data-id="4">
-                    <p>Wynająć auto4</p>
-                    <div class="todo__tasks-item-controls">
-                        <button class="check"><span class="sr-only">Mark as done</span><i class="fas fa-check-circle"></i></button>
-                        <button class="edit"><span class="sr-only">Edit</span><i class="fas fa-edit"></i></button>
-                        <button class="remove"><span class="sr-only">Remove</span><i class="fas fa-times"></i></button>
-                    </div>
-                </li>
-                <li class="todo__tasks-item" data-is-done="true" data-id="5">
-                    <p>Wynająć auto5</p>
-                    <div class="todo__tasks-item-controls">
-                        <button class="check"><span class="sr-only">Mark as done</span><i class="fas fa-check-circle"></i></button>
-                        <button class="edit"><span class="sr-only">Edit</span><i class="fas fa-edit"></i></button>
-                        <button class="remove"><span class="sr-only">Remove</span><i class="fas fa-times"></i></button>
-                    </div>
-                </li>
-                <li class="todo__tasks-item" data-is-done="false" data-id="6">
-                    <p>Wynająć auto6</p>
-                    <div class="todo__tasks-item-controls">
-                        <button class="check"><span class="sr-only">Mark as done</span><i class="fas fa-check-circle"></i></button>
-                        <button class="edit"><span class="sr-only">Edit</span><i class="fas fa-edit"></i></button>
-                        <button class="remove"><span class="sr-only">Remove</span><i class="fas fa-times"></i></button>
-                    </div>
-                </li>
-                <li class="todo__tasks-item" data-is-done="false" data-id="7">
-                    <p>Wynająć auto7</p>
-                    <div class="todo__tasks-item-controls">
-                        <button class="check"><span class="sr-only">Mark as done</span><i class="fas fa-check-circle"></i></button>
-                        <button class="edit"><span class="sr-only">Edit</span><i class="fas fa-edit"></i></button>
-                        <button class="remove"><span class="sr-only">Remove</span><i class="fas fa-times"></i></button>
-                    </div>
-                </li>
-                <li class="todo__tasks-item" data-is-done="false" data-id="8">
-                    <p>Wynająć auto8</p>
-                    <div class="todo__tasks-item-controls">
-                        <button class="check"><span class="sr-only">Mark as done</span><i class="fas fa-check-circle"></i></button>
-                        <button class="edit"><span class="sr-only">Edit</span><i class="fas fa-edit"></i></button>
-                        <button class="remove"><span class="sr-only">Remove</span><i class="fas fa-times"></i></button>
-                    </div>
-                </li> -->
+
             </ul>
         </div>
 
