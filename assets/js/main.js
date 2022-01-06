@@ -15,7 +15,8 @@ let isLoading = true;
 let getTasksPath = '/php/functions/getTasks.php';
 let updateTaskPath = '/php/functions/updateTask.php';
 let createTaskPath = '/php/functions/addTask.php';
-let removeTaskPath = '/php/functions/removeTask.php'
+let removeTaskPath = '/php/functions/removeTask.php';
+let getRandomQuotePath = '/php/functions/getRandomQuote.php'
 //constructor
 class TaskObj {
     constructor(text, isDone, id) {
@@ -42,6 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
         handleCounters();
         prepareEvents();
     });
+    fetch(getRandomQuotePath).then((res) => {
+        if (res.ok) {
+            return res.json();
+        }
+    }).then((quote) => {
+        document.querySelector('.todo__header-form-input').setAttribute('placeholder', quote[0].quote);
+    })
 
 })
 
@@ -120,33 +128,18 @@ const addTask = () => {
             return lastId = parseInt(lastId) + 1;
         }
     }
-    const newTask = new TaskObj(text, 'false', id());
-    updateTask(newTask, createTaskPath);
-    // fetch(createTaskPath, {
-    //     method: 'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify(newTask)
-    // }).then((res) => {
-    //     res.json
-    // });
+    if (text.trim() == "") {
+        text = '';
+        document.querySelector('.todo__header-form-input').setAttribute('placeholder', 'Ohh.. no.. you have written something wrong :(');
+    } else {
+        try {
+            const newTask = new TaskObj(text.trim(), 'false', id());
+            updateTask(newTask, createTaskPath);
+        } catch {
+            document.querySelector('.todo__header-form-input').setAttribute('placeholder', 'Ohh.. no.. you have written something wrong :(');
+        }
+    }
 }
-// const handleTaskAdd = () => {
-//     newTaskInput = document.querySelector('.todo__header-form-input').value;
-//     const id = () => {
-//         if (tasks.length < 1) {
-//             return 1;
-//         } else {
-//             let id = document.querySelector('.todo__tasks-item:last-child').getAttribute('data-id');
-//             let taskId = parseInt(id) + 1;
-//             return taskId;
-//         }
-//     }
-//     const newTaskObj = new TaskObj(newTaskInput, 'false', id());
-//     tasks.unshift(newTaskObj);
-//     updateLocalStorage();
-// }
 
 
 const handleTaskEvent = (e) => {
@@ -176,7 +169,7 @@ const editTask = (e) => {
     handleTaskEvent(e);
     createModal();
     let text = task.querySelector('p');
-    document.querySelector('.modal').innerHTML = `<form action='POST' class='edit'><input type='text'
+    document.querySelector('.modal').innerHTML = `<form class='edit'><input type='text'
         class='edit-input' value="${text.innerText}"><div class='modal-btns'> <button class='confirm' type='button'>Save</button><button type='button' class="cancel">Cancel</button></div></form><div class="listener"></div>`;
     document.querySelector('.confirm').addEventListener('click', () => {
         let inputValue = document.querySelector('.edit-input').value;
@@ -192,7 +185,7 @@ const editTask = (e) => {
 const removeTask = (e) => {
     handleTaskEvent(e);
     createModal();
-    document.querySelector('.modal').innerHTML = '<p>Are you sure?</p><div class="modal-btns"><button type="button" class="remove">Delete</button><button type="button" class="cancel">Cancel</button></div><div class="listener"></div>';
+    document.querySelector('.modal').innerHTML = '<form class="delete"><label>Are you sure?</label><div class="modal-btns"><button type="button" class="remove">Delete</button><button type="button" class="cancel">Cancel</button></div></form><div class="listener"></div>';
     document.querySelector('.remove').addEventListener('click', () => {
         todoList.removeChild(task);
         tasks = tasks.filter(task => task !== foundTask);
@@ -200,7 +193,7 @@ const removeTask = (e) => {
             foundTask.text, foundTask.isDone === 'false' || 0 ? 0 : 1, foundTask.id
         )
         console.log(taskToRemove);
-        updateTask(taskToRemove, removeTaskPath)
+        updateTask(taskToRemove, removeTaskPath);
         if (tasks.length <= 1) {
             window.location.reload();
         } else {

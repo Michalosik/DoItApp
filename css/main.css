@@ -16,6 +16,11 @@ body {
   width: 100%;
 }
 
+input,
+button {
+  outline-color: orange !important;
+}
+
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0);
   -webkit-clip-path: inset(50%);
@@ -46,8 +51,71 @@ body {
   z-index: 100;
 }
 
+.modal form,
+.listener form {
+  background-color: #eee;
+}
+
+.modal form input,
+.modal form label,
+.listener form input,
+.listener form label {
+  margin: 4rem 2rem 0 2rem;
+}
+
+.modal form .modal-btns,
+.listener form .modal-btns {
+  margin: 3rem 0 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-top: 1px solid grey;
+  z-index: 101;
+}
+
+.modal form .modal-btns button,
+.listener form .modal-btns button {
+  padding: 1rem;
+  background: none;
+  color: #383838;
+  width: 100%;
+  border: 1px solid transparent;
+}
+
+.modal form .modal-btns button:hover,
+.listener form .modal-btns button:hover {
+  background-color: rgba(247, 0, 0, 0.336);
+}
+
+.modal form .modal-btns .confirm,
+.modal form .modal-btns .remove,
+.listener form .modal-btns .confirm,
+.listener form .modal-btns .remove {
+  color: green;
+  border-right: 1px solid grey;
+}
+
+.modal form .modal-btns .confirm:hover,
+.modal form .modal-btns .remove:hover,
+.listener form .modal-btns .confirm:hover,
+.listener form .modal-btns .remove:hover {
+  color: #fff;
+  background-color: rgba(2, 95, 14, 0.336);
+}
+
 .modal .edit,
 .listener .edit {
+  border-top: 3px solid royalblue;
+  z-index: 101;
+}
+
+.modal .delete,
+.listener .delete {
+  padding-top: 2rem;
+  border-top: 3px solid #e14149;
   z-index: 101;
 }
 
@@ -63,10 +131,6 @@ body {
           align-items: center;
   background-color: rgba(0, 0, 0, 0.8);
   overflow: hidden;
-}
-
-.modal-btns {
-  z-index: 101;
 }
 
 @supports ((-webkit-backdrop-filter: blur(0.8rem)) or (backdrop-filter: blur(0.8rem))) or (-webkit-backdrop-filter: blur(0.8rem)) {

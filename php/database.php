@@ -1,9 +1,9 @@
 <?php
 class Database
 {
-    protected $dsn = "mysql:host=localhost; dbname=todo_bd";
-    protected $username = 'root';
-    protected $password = '';
+    protected $dsn = "PROVIDE_YOURS :)";
+    protected $username = 'PROVIDE_YOURS :)';
+    protected $password = 'PROVIDE_YOURS :)';
 
     public function connection()
     {
@@ -32,7 +32,13 @@ class Database
     public function removeTask($id, $text, $is_done)
     {
         $pdo = $this->connection();
-        $sql = "DELETE FROM todo_list WHERE id=? AND text=? AND is_done=?";
-        return $pdo->prepare($sql)->execute([$text, $is_done, $id]);
+        $sql = "DELETE FROM todo_list WHERE id=$id AND text='$text' AND is_done=$is_done";
+        return $pdo->query($sql);
+    }
+    public function getRandomQuote()
+    {
+        $pdo = $this->connection();
+        $sql = "SELECT quote FROM todo_quotes ORDER BY RAND() LIMIT 1";
+        return $pdo->query($sql);
     }
 }

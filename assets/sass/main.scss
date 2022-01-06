@@ -15,6 +15,11 @@ body {
     width: 100%;
 }
 
+input,
+button {
+    outline-color: orange !important;
+}
+
 .sr-only:not(:focus):not(:active) {
     clip: rect(0 0 0 0);
     -webkit-clip-path: inset(50%);
@@ -44,7 +49,54 @@ body {
     bottom: 0;
     z-index: 100;
 
+    form {
+        background-color: #eee;
+
+        input,
+        label {
+            margin: 4rem 2rem 0 2rem;
+        }
+
+        .modal-btns {
+            margin: 3rem 0 0 0;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid grey;
+            z-index: 101;
+
+            button {
+                padding: 1rem;
+                background: none;
+                color: rgb(56, 56, 56);
+                width: 100%;
+                border: 1px solid transparent;
+
+                &:hover {
+                    background-color: rgba(247, 0, 0, 0.336);
+                }
+            }
+
+            .confirm,
+            .remove {
+                color: green;
+                border-right: 1px solid grey;
+
+                &:hover {
+                    color: #fff;
+                    background-color: rgba(2, 95, 14, 0.336);
+                }
+            }
+        }
+    }
+
     .edit {
+        border-top: 3px solid royalblue;
+        z-index: 101;
+    }
+
+    .delete {
+        padding-top: 2rem;
+        border-top: 3px solid rgb(225, 65, 73);
         z-index: 101;
     }
 
@@ -58,9 +110,6 @@ body {
     overflow: hidden;
 }
 
-.modal-btns {
-    z-index: 101;
-}
 
 @supports ((backdrop-filter: blur(0.8rem)) or (-webkit-backdrop-filter: blur(0.8rem))) {
     .modal {
