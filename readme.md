@@ -1,4 +1,4 @@
-# countItDown!
+# ToDoApp!
 
 ## Live version: [Live](https://michalbali.unixstorm.eu/)
 
