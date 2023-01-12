@@ -12,7 +12,7 @@
 
 ## Description
 
-**DoList** is my app, that I made alone with use of PHP and AJAX. It's simple CRUD App where you can add some tasks, edit or remove them. App saves tasks on server side (about connectin app you will read in [installation](#installation) section). Try it live [here](https://michalbali.unixstorm.eu/)!
+**DoList** is an app, that I made alone with use of PHP and AJAX. It's simple CRUD App where you can add some tasks, edit or remove them. App saves tasks on server side (about connecting app you will read in [installation](#installation) section). Try it live [here](https://michalbali.unixstorm.eu/)!
 
 ## How to use
 
