@@ -1,6 +1,6 @@
 # ToDoApp!
 
-## Live version: [Live](https://michalbali.unixstorm.eu/)
+## Live version: [Live](https://michalb.unixstorm.eu/)
 
 ## Table of contents
 
